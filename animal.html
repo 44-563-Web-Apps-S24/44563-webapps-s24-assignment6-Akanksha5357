@@ -7,11 +7,9 @@
 
 <form>
     <label for="hidden-animal">The hidden animal type:</label>
-    <input type ="password" id="hidden-animal" value="Chicken"> <br>
-    <br>
+    <input type ="password" id="hidden-animal" value="Chicken"><br>
     <label for="guess-animal">Guess the animal:</label>
     <input type ="text" id="guess-animal"> <br>
-    <br>
     <button type="button" onclick="checkAnimal()">Check the guess</button>
 </form>
 <p id="result"></p>
@@ -34,6 +32,5 @@
         document.getElementById('result').innerHTML = `Correct: ${correct}, Wrong: ${wrong}`;
     }
 </script>
-
 </body>
 </html> 
