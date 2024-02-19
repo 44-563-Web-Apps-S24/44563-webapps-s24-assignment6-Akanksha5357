@@ -7,7 +7,7 @@
 
 <body>
 
-<h2>Akanksha discount calculations</h2>
+<h2>Akanksha Mamidiga discount calculations</h2>
 
 <form>
     <label for="price">Enter price per</label>
@@ -30,15 +30,15 @@
 
 <form>
 
-    <label for="op1">Sum</label>
+    <label for="op1">sum</label>
     <input type="radio" id="op1" value="sum" name="op" onclick="chooseOp()">
     <br>
 
-    <label for="op2">Mult</label>
+    <label for="op2">mult</label>
     <input type="radio" id="op2" value="multiply" name="op" onclick="chooseOp()">
     <br>
 
-    <label for="op3">Exp</label>
+    <label for="op3">exp</label>
     <input type="radio" id="op3" value="exponent" name="op" onclick="chooseOp()">
 
 </form>
@@ -62,19 +62,19 @@
     }
 
     function chooseOp() {
-        var price = document.getElementById('price').value;
-        var discount = document.getElementById('discount').value;
+    var price = parseFloat(document.getElementById('price').value);
+    var discount = parseFloat(document.getElementById('discount').value);
 
-        if (document.getElementById('op1').checked) {
-            document.getElementById('result').innerHTML = `The sum of the price and discount is ${Number(price) +  Number(discount)}`;
-        }
-        if (document.getElementById('op2').checked) {
-            document.getElementById('result').innerHTML = `The product of the price and discount is ${Number(price) *  Number(discount)}`;
-        }
-        if (document.getElementById('op3').checked) {
-            document.getElementById('result').innerHTML = `The exponent of the price and discount is ${Math.pow(Number(price), Number(discount))}`;
-        }
+    if (document.getElementById('op1').checked) {
+        document.getElementById('result').innerHTML = `Sum of ${price} and ${discount} is ${price + discount}`;
     }
+    if (document.getElementById('op2').checked) {
+        document.getElementById('result').innerHTML = `Difference between ${price} and ${discount} is ${price - discount}`;
+    }
+    if (document.getElementById('op3').checked) {
+        document.getElementById('result').innerHTML = `Product of ${price} and ${discount} is ${price * discount}`;
+    }
+}
 </script>
 
 </body>
