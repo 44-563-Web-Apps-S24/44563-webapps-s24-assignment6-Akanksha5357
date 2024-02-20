@@ -7,7 +7,7 @@
     <h1>Animal game by Akanksha Mamidiga</h1>
     <h2>Getting input</h2>
 
-    <form>
+    <form id="animalForm">
         <label for="hidden-animal">The hidden animal type:</label>
         <input type="password" id="hidden-animal" value="Chicken"><br>
         <label for="guess-animal">Guess the animal:</label>
@@ -24,7 +24,7 @@
         let correct = 0;
         let wrong = 0;
         let useImage = 1;
-
+        
         function checkAnimal() {
             const hiddenAnimal = document.getElementById('hidden-animal').value;
             const guessedAnimal = document.getElementById('guess-animal').value;
@@ -36,8 +36,13 @@
                 wrong++;
                 alert("Grrrr");
             }
-
-            document.getElementById('result').innerHTML = `Correct: ${correct}, Wrong: ${wrong}`;
+            document.getElementById('result').innerHTML = `<p>Correct guesses: ${correct}</p><p>Wrong guesses: ${wrong}</p>`;
+            // Bonus
+            if (wrong > correct) {
+                document.getElementById('animalForm').onclick = function() {
+                    alert('Sorry, too many wrong guesses.');
+                };
+            }
         }
 
         function selectImage() {
